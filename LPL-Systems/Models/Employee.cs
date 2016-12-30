@@ -2,7 +2,7 @@
 
 namespace LPL_Systems.Models
 {
-    sealed class Employee : Person
+    public sealed class Employee : Person
     {
         [Key]
         [Range(0, 12)]

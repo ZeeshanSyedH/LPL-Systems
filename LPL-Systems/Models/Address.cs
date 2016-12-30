@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LPL_Systems.Models
 {
-    class Address
+    public class Address
     {
         [Key]
         public int addressID { get; set; }

@@ -2,7 +2,7 @@
 
 namespace LPL_Systems.Models
 {
-    class Client
+    public class Client
     {
         [Key]
         public int organizationID { get; set; }

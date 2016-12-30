@@ -10,9 +10,10 @@ namespace LPL_Systems.Models
 
         public DbSet<Employee> Employees { get; set; }
 
+        public DbSet<Invoice> Invoices { get; set; }
 
         public ApplicationDbContext()
-            : base("DefaultConnection")
+                : base("DefaultConnection")
         { }
 
         public static ApplicationDbContext Create()

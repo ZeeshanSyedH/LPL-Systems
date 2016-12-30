@@ -2,7 +2,7 @@
 
 namespace LPL_Systems.Models
 {
-    abstract class Person
+    public abstract class Person
     {
         [Required]
         [StringLength(30)]

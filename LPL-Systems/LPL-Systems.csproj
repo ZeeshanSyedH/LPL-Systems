@@ -79,6 +79,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\Account\CredentialView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Login.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,12 +95,26 @@
     <Compile Include="Migrations\201612260244540_InitialCreate.Designer.cs">
       <DependentUpon>201612260244540_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612260328540_InvoiceAdded.cs" />
+    <Compile Include="Migrations\201612260328540_InvoiceAdded.Designer.cs">
+      <DependentUpon>201612260328540_InvoiceAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Services\ClientRepository.cs" />
+    <Compile Include="Services\EmployeeRespository.cs" />
+    <Compile Include="Services\IClientRepository.cs" />
+    <Compile Include="Services\IEmployeeRepository.cs" />
+    <Compile Include="Services\IInvoiceRepository.cs" />
+    <Compile Include="Services\InvoiceRepository.cs" />
+    <Compile Include="Views\Account\CredentialView.xaml.cs">
+      <DependentUpon>CredentialView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -118,6 +136,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201612260244540_InitialCreate.resx">
       <DependentUpon>201612260244540_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612260328540_InvoiceAdded.resx">
+      <DependentUpon>201612260328540_InvoiceAdded.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,8 +162,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BusinessLogic\" />
-    <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\Operations\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\WelcomeBackground.png" />
