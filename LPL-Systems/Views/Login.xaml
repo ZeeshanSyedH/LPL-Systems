@@ -1,31 +1,20 @@
-﻿<Window
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LPL_Systems"
-        xmlns:Account="clr-namespace:LPL_Systems.Views.Account" x:Class="LPL_Systems.MainWindow"
-        mc:Ignorable="d"
-        Title="LPL-Systems" Height="528.405" Width="861.084" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Visibility="Visible" WindowStyle="None" AllowsTransparency="True">
-    <Window.Background>
-        <SolidColorBrush Color="White" Opacity="0"/>
-    </Window.Background>
+﻿<Page x:Class="LPL_Systems.Views.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LPL_Systems.Views"
+      mc:Ignorable="d"
+      Title="Login" Height="284" Width="632">
 
-    <Grid Margin="0,0,-84,27">
-        <Grid.Background>
-            <ImageBrush ImageSource="../Assets/WelcomeBackground.png" Stretch="Uniform"/>
-        </Grid.Background>
-        <Button x:Name="buttonMinimize" Content="" HorizontalAlignment="Left" Margin="736,139,0,0" VerticalAlignment="Top" Width="40" Height="40" BorderThickness="0" Tag="-" Click="NavigationButton_Clicked">
-            <Button.Background>
-                <ImageBrush ImageSource="../Assets/MinimizeIcon.png" Stretch="UniformToFill"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="buttonExit" Content="" HorizontalAlignment="Left" Margin="776,139,0,0" VerticalAlignment="Top" Width="40" Height="40" BorderThickness="0" Tag="x" Click="NavigationButton_Clicked">
-            <Button.Background>
-                <ImageBrush ImageSource="../Assets/ExitIcon.png" Stretch="UniformToFill"/>
-            </Button.Background>
-        </Button>
-        <Label x:Name="label" Content="LPL SYSTEMS | WELCOME" HorizontalAlignment="Center" Margin="344,139,230,0" VerticalAlignment="Top" Height="40" Width="371" FontSize="20"/>
-        <Account:TestUserControl HorizontalAlignment="Left" Margin="215,203,0,0" VerticalAlignment="Top" Height="251" Width="510"/>
+    <Grid Margin="60,40,0,22" HorizontalAlignment="Left" Width="522">
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="40" Margin="26,10,0,0" VerticalAlignment="Top" Width="40" Source="/LPL-Systems;component/Assets/User.png"/>
+        <Image x:Name="image1_Copy" HorizontalAlignment="Left" Height="40" Margin="26,73,0,0" VerticalAlignment="Top" Width="40" Source="/LPL-Systems;component/Assets/lock-solid.png"/>
+        <TextBox x:Name="textBoxUsername" HorizontalAlignment="Left" Height="30" Margin="87,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" FontWeight="Light" FontFamily="Nirmala UI" FontSize="13" AutomationProperties.IsRequiredForForm="True" Foreground="Black"/>
+        <Label x:Name="LabelRegister" Content="Don't have an Account ?" HorizontalAlignment="Left" Margin="259,186,0,0" VerticalAlignment="Top" Width="145" Foreground="Black"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="244" Margin="87,84,0,0" Background="{x:Null}" BorderBrush="Black" BorderThickness="0,0,0,1"/>
+        <Button x:Name="buttonLogin" Content="Login " HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Margin="17,180,0,0" Height="32" Background="{x:Null}" BorderBrush="Black" FontSize="15"/>
+        <Button x:Name="buttonRegister" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Margin="404,180,0,0" BorderBrush="Black" Background="{x:Null}" Height="32" FontSize="15" Click="buttonRegister_Click"/>
+
     </Grid>
-</Window>
+</Page>

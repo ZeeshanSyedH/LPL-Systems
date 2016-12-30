@@ -1,35 +1,26 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace LPL_Systems
+namespace LPL_Systems.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Login.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Login : Page
     {
-        public MainWindow()
+        public Login()
         {
             InitializeComponent();
         }
 
-        private void NavigationButton_Clicked(object sender, RoutedEventArgs e)
+        private void buttonRegister_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is Button)
+            foreach (Window window in Application.Current.Windows)
             {
-                Button pushedButton = (Button)sender;
-                switch (pushedButton.Tag.ToString())
+                if (window != null && window.DependencyObjectType.Name == "MainWindow")
                 {
-                    // THE TAG OF THE MINIMIZE BUTTON CONTAINS A -
-                    case "-":
-                        this.WindowState = WindowState.Minimized;
-                        break;
-                    // THE TAG OF THE EXIT BUTTON CONTAINS A x
-                    case "x":
-                        Application.Current.Shutdown();
-                        break;
-                    default:
-                        break;
+                    MainWindow Instance = (MainWindow)window;
+                    Instance.Display("Register");
                 }
             }
         }
