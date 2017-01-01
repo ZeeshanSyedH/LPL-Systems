@@ -22,12 +22,15 @@ namespace LPL_Systems
         public void Display(string className)
         {
             Type type = Type.GetType("LPL_Systems.Views." + className);
-            Page pageView = (Page)Activator.CreateInstance(type);
+            if (type != null)
+            {
+                Page pageView = (Page)Activator.CreateInstance(type);
 
-            labelTitle.Content = "LPL Systems | " + className;
+                labelTitle.Content = "LPL Systems | " + className;
 
-            MainFrame.Content = null;
-            MainFrame.Navigate(pageView);
+                MainFrame.Content = null;
+                MainFrame.Navigate(pageView);
+            }
         }
 
         private void NavigationButton_Clicked(object sender, RoutedEventArgs e)

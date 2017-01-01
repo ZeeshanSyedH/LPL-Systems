@@ -13,8 +13,8 @@
         <TextBox x:Name="textBoxUsername" HorizontalAlignment="Left" Height="30" Margin="87,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" FontWeight="Light" FontFamily="Nirmala UI" FontSize="13" AutomationProperties.IsRequiredForForm="True" Foreground="Black"/>
         <Label x:Name="LabelRegister" Content="Don't have an Account ?" HorizontalAlignment="Left" Margin="259,186,0,0" VerticalAlignment="Top" Width="145" Foreground="Black"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="244" Margin="87,84,0,0" Background="{x:Null}" BorderBrush="Black" BorderThickness="0,0,0,1"/>
-        <Button x:Name="buttonLogin" Content="Login " HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Margin="17,180,0,0" Height="32" Background="{x:Null}" BorderBrush="Black" FontSize="15"/>
-        <Button x:Name="buttonRegister" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Margin="404,180,0,0" BorderBrush="Black" Background="{x:Null}" Height="32" FontSize="15" Click="buttonRegister_Click"/>
+        <Button x:Name="buttonLogin" Content="Login " HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Margin="17,180,0,0" Height="32" Background="{x:Null}" BorderBrush="Black" FontSize="15" Click="buttonNavigation" Tag="Dashboard"/>
+        <Button x:Name="buttonRegister" Content="Register" HorizontalAlignment="Left" VerticalAlignment="Top" Width="87" Margin="404,180,0,0" BorderBrush="Black" Background="{x:Null}" Height="32" FontSize="15" Click="buttonNavigation" Tag="Register"/>
 
     </Grid>
 </Page>

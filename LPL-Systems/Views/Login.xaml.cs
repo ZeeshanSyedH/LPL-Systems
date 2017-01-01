@@ -24,5 +24,21 @@ namespace LPL_Systems.Views
                 }
             }
         }
+
+        private void buttonNavigation(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button)
+            {
+                Button thisButton = (Button)sender;
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window != null && window.DependencyObjectType.Name == "MainWindow")
+                    {
+                        MainWindow Instance = (MainWindow)window;
+                        Instance.Display(thisButton.Tag.ToString());
+                    }
+                }
+            }
+        }
     }
 }

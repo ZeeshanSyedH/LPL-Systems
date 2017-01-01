@@ -45,5 +45,10 @@ namespace LPL_Systems.Views
                 }
             }
         }
+
+        private void buttonAddUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
