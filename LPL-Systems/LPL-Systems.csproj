@@ -80,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BusinessLogic\TextboxReact.cs" />
     <Compile Include="Migrations\201701010309443_invoiceAdded.cs" />
     <Compile Include="Migrations\201701010309443_invoiceAdded.Designer.cs">
       <DependentUpon>201701010309443_invoiceAdded.cs</DependentUpon>
@@ -176,7 +177,6 @@
     <Resource Include="Assets\ExitIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BusinessLogic\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>

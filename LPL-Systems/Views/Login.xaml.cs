@@ -1,4 +1,5 @@
-﻿using LPL_Systems.Services;
+﻿using LPL_Systems.BusinessLogic;
+using LPL_Systems.Services;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -43,6 +44,16 @@ namespace LPL_Systems.Views
                     }
                 }
             }
+        }
+
+        private void textbox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextboxReact.textBox_GotFocus(sender, e);
+        }
+
+        private void textbox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextboxReact.textBox_LostFocus(sender, e);
         }
     }
 }
