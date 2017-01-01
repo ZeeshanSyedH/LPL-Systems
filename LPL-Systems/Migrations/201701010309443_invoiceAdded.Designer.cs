@@ -7,13 +7,13 @@ namespace LPL_Systems.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InvoiceAdded : IMigrationMetadata
+    public sealed partial class invoiceAdded : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InvoiceAdded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(invoiceAdded));
         
         string IMigrationMetadata.Id
         {
-            get { return "201612260328540_InvoiceAdded"; }
+            get { return "201701010309443_invoiceAdded"; }
         }
         
         string IMigrationMetadata.Source

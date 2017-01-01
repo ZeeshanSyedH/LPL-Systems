@@ -8,13 +8,13 @@
       Title="Dashboard" Height="284" Width="632">
 
     <Grid HorizontalAlignment="Left" Width="632">
-        <Image x:Name="imageDescription" HorizontalAlignment="Left" Height="190" Margin="372,72,0,0" VerticalAlignment="Top" Width="190"/>
-        <Label x:Name="labelDescription" Content="The description of the Option will be here" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,18,0,0" Width="190" Height="49"/>
+        <Image x:Name="imageDescription" HorizontalAlignment="Left" Height="190" Margin="271,21,0,0" VerticalAlignment="Top" Width="190"/>
         <Button x:Name="buttonCreateInvoice" Content="Create Invoice" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="36,21,0,0" Height="28" Background="{x:Null}" BorderBrush="Black" Tag="Invoice" Click="buttonNavigation" MouseEnter="ButtonHover"/>
         <Button x:Name="buttonFreightHistory" Content="Freight History" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="36,61,0,0" Height="28" Background="{x:Null}" BorderBrush="Black" Tag="History" Click="buttonNavigation" MouseEnter="ButtonHover"/>
         <Button x:Name="buttonStoreClientInformation_" Content="Store Client Information " HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="36,101,0,0" Height="28" Background="{x:Null}" BorderBrush="Black" Tag="Clients" MouseEnter="ButtonHover"/>
         <Button x:Name="buttonRecordExpense" Content="Record Expense" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="36,141,0,0" Height="28" Background="{x:Null}" BorderBrush="Black" Tag="Expenses" Click="buttonNavigation" MouseEnter="ButtonHover"/>
         <Button x:Name="buttonPrintReports" Content="Print Reports" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="36,181,0,0" Height="28" Background="{x:Null}" BorderBrush="Black" Tag="Reports" Click="buttonNavigation" MouseEnter="ButtonHover"/>
-        <Button x:Name="buttonSignOut" Content="Sign Out" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="36,246,0,0" Height="28" Background="{x:Null}" BorderBrush="Black" Tag="Login" Click="buttonNavigation"/>
+        <Button x:Name="buttonSignOut" Content="Sign Out" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" Margin="480,246,0,0" Height="28" Background="{x:Null}" BorderBrush="Black" Tag="Login" Click="buttonNavigation"/>
+        <Label x:Name="label" Content="Description Here" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="480,71,0,0" Height="97" Width="126"/>
     </Grid>
 </Page>

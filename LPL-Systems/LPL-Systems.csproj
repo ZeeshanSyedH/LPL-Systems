@@ -80,6 +80,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Migrations\201701010309443_invoiceAdded.cs" />
+    <Compile Include="Migrations\201701010309443_invoiceAdded.Designer.cs">
+      <DependentUpon>201701010309443_invoiceAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
@@ -108,10 +112,6 @@
     <Compile Include="Migrations\201612260244540_InitialCreate.cs" />
     <Compile Include="Migrations\201612260244540_InitialCreate.Designer.cs">
       <DependentUpon>201612260244540_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612260328540_InvoiceAdded.cs" />
-    <Compile Include="Migrations\201612260328540_InvoiceAdded.Designer.cs">
-      <DependentUpon>201612260328540_InvoiceAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
@@ -152,8 +152,8 @@
     <EmbeddedResource Include="Migrations\201612260244540_InitialCreate.resx">
       <DependentUpon>201612260244540_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612260328540_InvoiceAdded.resx">
-      <DependentUpon>201612260328540_InvoiceAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701010309443_invoiceAdded.resx">
+      <DependentUpon>201701010309443_invoiceAdded.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

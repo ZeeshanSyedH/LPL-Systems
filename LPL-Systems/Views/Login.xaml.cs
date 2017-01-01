@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using LPL_Systems.Services;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace LPL_Systems.Views
@@ -8,6 +9,9 @@ namespace LPL_Systems.Views
     /// </summary>
     public partial class Login : Page
     {
+        private IEmployeeRepository _repository = new EmployeeRespository();
+        private EmployeeRespository _employee = null;
+
         public Login()
         {
             InitializeComponent();
