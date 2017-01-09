@@ -55,7 +55,7 @@ namespace LPL_Systems.Views
             }
             catch (System.Exception ex)
             {
-                throw ex;
+
             }
 
         }

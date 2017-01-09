@@ -42,7 +42,7 @@ namespace LPL_Systems.Views
             if (sender is Button)
             {
                 Button thisButton = (Button)sender;
-                string key = buttonLogin.Tag.ToString();
+                string key = thisButton.Tag.ToString();
                 NavigateTo(key);
             }
         }

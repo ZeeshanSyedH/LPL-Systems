@@ -1,4 +1,5 @@
 ﻿using LPL_Systems.Models;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,11 +10,25 @@ namespace LPL_Systems.Services
     {
         protected ApplicationDbContext _context;
 
+        // Assign DB Context
         public BaseRepository()
         {
             _context = new ApplicationDbContext();
         }
 
+        // Get Entity by ID
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await _context.Set<T>().FirstOrDefaultAsync(e => e.id == id);
+        }
+
+        // Get All Entities
+        public async Task<List<T>> GetEntitiesAsync(T Entity)
+        {
+            return await _context.Set<T>().ToListAsync();
+        }
+
+        // Add Entity
         public async Task<T> AddAsync(T entity)
         {
             _context.Set<T>().Add(entity);
@@ -21,13 +36,7 @@ namespace LPL_Systems.Services
             return entity;
         }
 
-        public async Task DeleteAsync(T entity)
-        {
-            _context.Set<T>().Remove(entity);
-            await _context.SaveChangesAsync();
-        }
-
-
+        // Delete Entity By Id
         public async Task<T> DeleteByIdAsync(int id)
         {
             var entity = _context.Set<T>().FirstOrDefault(e => e.id == id);
@@ -39,21 +48,24 @@ namespace LPL_Systems.Services
             return entity;
         }
 
-        public async Task<T> GetByAsync(int id)
+        // Delete Entity By Object
+        public async Task DeleteAsync(T entity)
         {
-            return await _context.Set<T>().FirstOrDefaultAsync(e => e.id == id);
+            _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
         }
 
-        //   public async Task<T> DeleteEntityAsync()
-        public async Task<Client> DeleteClientAsync(int clientId)
+        // Update the Entity
+        public async Task<T> UpdateAsync(T Entity)
         {
-            var client = _context.Clients.FirstOrDefault(c => c.organizationID == clientId);
-            if (client != null)
+            if (!_context.Set<T>().Local.Any(e => e.id == Entity.id))
             {
-                _context.Clients.Remove(client);
+                _context.Set<T>().Attach(Entity);
             }
+
+            _context.Entry(Entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            return client;
+            return Entity;
         }
     }
 }
