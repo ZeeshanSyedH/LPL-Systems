@@ -1,5 +1,7 @@
 ﻿using LPL_Systems.BusinessLogic;
+using LPL_Systems.Models;
 using LPL_Systems.Services;
+using LPL_Systems.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -11,11 +13,16 @@ namespace LPL_Systems.Views
     public partial class Login : Page
     {
         private IEmployeeRepository _repository = new EmployeeRespository();
-        private EmployeeRespository _employee = null;
+        private Employee _employee = null;
+        private LoginViewModel _vm;
 
         public Login()
         {
             InitializeComponent();
+
+            _vm = new LoginViewModel();
+            _vm.Email = "something";
+            DataContext = _vm;
         }
 
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
@@ -35,13 +42,19 @@ namespace LPL_Systems.Views
             if (sender is Button)
             {
                 Button thisButton = (Button)sender;
-                foreach (Window window in Application.Current.Windows)
+                string key = buttonLogin.Tag.ToString();
+                NavigateTo(key);
+            }
+        }
+
+        private void NavigateTo(string key)
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window != null && window.DependencyObjectType.Name == "MainWindow")
                 {
-                    if (window != null && window.DependencyObjectType.Name == "MainWindow")
-                    {
-                        MainWindow Instance = (MainWindow)window;
-                        Instance.Display(thisButton.Tag.ToString());
-                    }
+                    MainWindow Instance = (MainWindow)window;
+                    Instance.Display(key);
                 }
             }
         }
@@ -54,6 +67,26 @@ namespace LPL_Systems.Views
         private void textbox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextboxReact.textBox_LostFocus(sender, e);
+        }
+
+        private async void buttonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            // do get client by email in iemployeerepo
+            // _employee = await _repository.(_vm.Email);
+            if (_employee != null)
+            {
+                var hash = Encryption.ComputeHash(_vm.Password, _employee.salt);
+                if (_employee.password == hash)
+                {
+                    MainWindow.Employee = _employee;
+                    NavigateTo("Dashboard");
+                }
+                else
+                {
+                    MainWindow.Employee = null;
+                    _vm.ErrorMessage = "Invalid username and password";
+                }
+            }
         }
     }
 }

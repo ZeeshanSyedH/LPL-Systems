@@ -6,30 +6,11 @@ using System.Threading.Tasks;
 
 namespace LPL_Systems.Services
 {
-    class EmployeeRespository : IEmployeeRepository
+    class EmployeeRespository : BaseRepository<Employee>, IEmployeeRepository
     {
-        ApplicationDbContext _context = new ApplicationDbContext();
-        public async Task<Employee> AddEmployeeAsync(Employee employee)
-        {
-            _context.Employees.Add(employee);
-            await _context.SaveChangesAsync();
-            return employee;
-        }
-
-        public async Task<Employee> DeleteEmployeeAsync(int employeeId)
-        {
-            var employee = _context.Employees.FirstOrDefault(e => e.employeeId == employeeId);
-            if (employee != null)
-            {
-                _context.Employees.Remove(employee);
-            }
-            await _context.SaveChangesAsync();
-            return employee;
-        }
-
         public Task<Employee> GetEmployeeAsync(int id)
         {
-            return _context.Employees.FirstOrDefaultAsync(e => e.employeeId == id);
+            return _context.Employees.FirstOrDefaultAsync(e => e.id == id);
         }
 
         public Task<List<Employee>> GetEmployeesAsync()
@@ -39,7 +20,7 @@ namespace LPL_Systems.Services
 
         public async Task<Employee> UpdateEmployeeAsync(Employee employee)
         {
-            if (!_context.Employees.Local.Any(e => e.employeeId == employee.employeeId))
+            if (!_context.Employees.Local.Any(e => e.id == employee.id))
             {
                 _context.Employees.Attach(employee);
             }

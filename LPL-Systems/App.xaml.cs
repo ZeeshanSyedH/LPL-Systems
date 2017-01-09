@@ -13,5 +13,6 @@ namespace LPL_Systems
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

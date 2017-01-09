@@ -85,6 +85,19 @@
     <Compile Include="Migrations\201701010309443_invoiceAdded.Designer.cs">
       <DependentUpon>201701010309443_invoiceAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701090110451_PhoneDatatype.cs" />
+    <Compile Include="Migrations\201701090110451_PhoneDatatype.Designer.cs">
+      <DependentUpon>201701090110451_PhoneDatatype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701090128032_saltAdded.cs" />
+    <Compile Include="Migrations\201701090128032_saltAdded.Designer.cs">
+      <DependentUpon>201701090128032_saltAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Services\BaseRepository.cs" />
+    <Compile Include="Services\Encryption.cs" />
+    <Compile Include="Services\IBaseRepository.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Views\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
@@ -156,6 +169,12 @@
     <EmbeddedResource Include="Migrations\201701010309443_invoiceAdded.resx">
       <DependentUpon>201701010309443_invoiceAdded.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701090110451_PhoneDatatype.resx">
+      <DependentUpon>201701090110451_PhoneDatatype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701090128032_saltAdded.resx">
+      <DependentUpon>201701090128032_saltAdded.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -176,9 +195,7 @@
   <ItemGroup>
     <Resource Include="Assets\ExitIcon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Assets\WelcomeBackground.png" />
   </ItemGroup>

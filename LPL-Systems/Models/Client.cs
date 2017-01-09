@@ -2,7 +2,7 @@
 
 namespace LPL_Systems.Models
 {
-    public class Client
+    public sealed class Client : BaseModel
     {
         [Key]
         public int organizationID { get; set; }

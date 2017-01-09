@@ -9,11 +9,7 @@
       Title="Register" Width="520" Height="284">
 
     <Grid Width="520" Height="264" Margin="0,28,0,-8" VerticalAlignment="Top" HorizontalAlignment="Right">
-        <TextBox x:Name="textBoxFirstname" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="{Binding firstName}" VerticalAlignment="Top" Width="154" Margin="101,11,0,0" GotFocus="textBox_GotFocus" LostFocus="textBox_LostFocus" Tag="ie. John" Background="{x:Null}" BorderBrush="Black" BorderThickness="0,0,0,1" FontSize="15" FlowDirection="RightToLeft">
-            <TextBox.BindingGroup>
-                <BindingGroup/>
-            </TextBox.BindingGroup>
-        </TextBox>
+        <TextBox x:Name="textBoxFirstname" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="{Binding firstName}" VerticalAlignment="Top" Width="154" Margin="101,11,0,0" GotFocus="textBox_GotFocus" LostFocus="textBox_LostFocus" Tag="ie. John" Background="{x:Null}" BorderBrush="Black" BorderThickness="0,0,0,1" FontSize="15" FlowDirection="RightToLeft"/>
         <TextBox x:Name="textBoxLastName" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="{Binding lastName}" VerticalAlignment="Top" Width="154" Margin="342,10,0,0" Tag="ie. Doe" GotFocus="textBox_GotFocus" LostFocus="textBox_LostFocus" Background="{x:Null}" BorderBrush="Black" BorderThickness="0,0,0,1" FontSize="15" FlowDirection="RightToLeft"/>
         <TextBox x:Name="textBoxPhone" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="{Binding phoneNumber}" VerticalAlignment="Top" Width="154" Margin="99,62,0,0" Tag="ie. 5145145145" GotFocus="textBox_GotFocus" LostFocus="textBox_LostFocus" Background="{x:Null}" BorderBrush="Black" BorderThickness="0,0,0,1" FontSize="15" FlowDirection="RightToLeft"/>
         <TextBox x:Name="textBoxEmail" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="{Binding emailAddress}" VerticalAlignment="Top" Width="154" Margin="342,62,0,0" Tag="ie. John@Doe.com" GotFocus="textBox_GotFocus" LostFocus="textBox_LostFocus" BorderBrush="Black" Background="{x:Null}" BorderThickness="0,0,0,1" FontSize="15" FlowDirection="RightToLeft"/>

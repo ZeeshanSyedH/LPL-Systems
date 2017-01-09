@@ -20,5 +20,13 @@ namespace LPL_Systems.Models
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Employee>().Property(x => x.id).HasColumnName("employeeId");
+            modelBuilder.Entity<Client>().Property(x => x.id).HasColumnName("organizationID");
+        }
     }
 }

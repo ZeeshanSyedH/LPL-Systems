@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LPL_Systems.Models;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -10,6 +11,7 @@ namespace LPL_Systems
     public partial class MainWindow : Window
     {
         public static MainWindow Instance;
+        public static Employee Employee;
 
         public MainWindow()
         {

@@ -45,23 +45,18 @@ namespace LPL_Systems.Views
 
         private async void buttonAddUser_Click(object sender, RoutedEventArgs e)
         {
-            //newEmployee.firstName = textBoxFirstname.Text;
-            //newEmployee.lastName = textBoxLastName.Text;
-            ////  newEmployee.phoneNumber = Convert.tofloat(textBoxPhone.Text); THIS IS A FLOAT NOT A DOUBLE 
-            //newEmployee.phoneNumber = 1335;
-            //newEmployee.position = textBoxPosition.Text;
-            //newEmployee.emailAddress = textBoxEmail.Text;
-            //newEmployee.password = "Test";
-
-            //newEmployee.firstName = "Shani";
-            //newEmployee.lastName = "Shah";
-            //newEmployee.phoneNumber = 1335;
-            //newEmployee.position = "Software Guy";
-            //newEmployee.emailAddress = "Shani@gmail.com";
-
             newEmployee.password = "Test";
 
-            await repository.AddEmployeeAsync(newEmployee);
+            try
+            {
+                newEmployee.salt = Encryption.RandomString();
+                newEmployee.password = Encryption.ComputeHash(newEmployee.password, newEmployee.salt);
+                await repository.AddAsync(newEmployee);
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
 
         }
     }

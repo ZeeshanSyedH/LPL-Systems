@@ -4,13 +4,9 @@ using System.Threading.Tasks;
 
 namespace LPL_Systems.Services
 {
-    public interface IClientRepository
+    interface IClientRepository : IBaseRepository<Client>
     {
         Task<List<Client>> GetClientsAsync();
-
-        Task<Client> GetClientAsync(int id);
-
-        Task<Client> AddClientAsync(Client client);
 
         Task<Client> UpdateClientAsync(Client client);
 
