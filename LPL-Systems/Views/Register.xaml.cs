@@ -1,6 +1,9 @@
 ﻿using LPL_Systems.BusinessLogic;
 using LPL_Systems.Models;
 using LPL_Systems.Services;
+using LPL_Systems.ViewModels;
+using System.Data.Entity.Validation;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,12 +16,25 @@ namespace LPL_Systems.Views
     {
         private IEmployeeRepository repository = new EmployeeRespository();
         private Employee newEmployee = new Employee();
+        private RegisterViewModel _vm;
 
 
         public Register()
         {
             InitializeComponent();
-            this.DataContext = newEmployee;
+
+            _vm = new RegisterViewModel();
+            applyPlaceHolder();
+            DataContext = _vm;
+        }
+
+        private void applyPlaceHolder()
+        {
+            _vm.FirstName = "Bob";
+            _vm.LastName = "Jones";
+            _vm.Email = "BJones@domain.com";
+            _vm.Phone = "5145145145";
+            _vm.Position = "Software Engineer";
         }
 
         private void buttonRegister_Click(object sender, RoutedEventArgs e)
@@ -52,11 +68,16 @@ namespace LPL_Systems.Views
                 newEmployee.salt = Encryption.RandomString();
                 newEmployee.password = Encryption.ComputeHash(newEmployee.password, newEmployee.salt);
                 await repository.AddAsync(newEmployee);
+                _vm.ErrorMessage = "The Employee Has Been Registered";
+                applyPlaceHolder();
             }
-            catch (System.Exception ex)
+            catch (DbEntityValidationException ex)
             {
-
+                _vm.ErrorMessage = "Please Verify the Following \n --> ";
+                _vm.ErrorMessage += string.Join(" \n --> ", ex.EntityValidationErrors.SelectMany(x => x.ValidationErrors).Select(x => x.ErrorMessage));
             }
+
+
 
         }
     }

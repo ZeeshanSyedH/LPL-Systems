@@ -4,7 +4,6 @@ namespace LPL_Systems.Models
 {
     public sealed class Client : BaseModel
     {
-        [Key]
         public int organizationID { get; set; }
 
         [Required]

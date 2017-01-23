@@ -11,6 +11,10 @@ namespace LPL_Systems.BusinessLogic
             if (sender is PasswordBox)
             {
                 PasswordBox removePlaceholder = (PasswordBox)sender;
+                //if (// if not black foreground then)
+                //{
+
+                //}
                 removePlaceholder.Foreground = new SolidColorBrush(Colors.Black);
                 removePlaceholder.Password = "";
             }

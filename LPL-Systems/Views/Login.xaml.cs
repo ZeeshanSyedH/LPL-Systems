@@ -21,7 +21,7 @@ namespace LPL_Systems.Views
             InitializeComponent();
 
             _vm = new LoginViewModel();
-            _vm.Email = "something";
+            _vm.Email = "BJones@domain.com";
             DataContext = _vm;
         }
 

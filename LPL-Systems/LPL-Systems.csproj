@@ -93,11 +93,16 @@
     <Compile Include="Migrations\201701090128032_saltAdded.Designer.cs">
       <DependentUpon>201701090128032_saltAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701191934247_removedCompositeKey.cs" />
+    <Compile Include="Migrations\201701191934247_removedCompositeKey.Designer.cs">
+      <DependentUpon>201701191934247_removedCompositeKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Services\BaseRepository.cs" />
     <Compile Include="Services\Encryption.cs" />
     <Compile Include="Services\IBaseRepository.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="Views\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
@@ -174,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701090128032_saltAdded.resx">
       <DependentUpon>201701090128032_saltAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701191934247_removedCompositeKey.resx">
+      <DependentUpon>201701191934247_removedCompositeKey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

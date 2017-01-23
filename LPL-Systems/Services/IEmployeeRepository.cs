@@ -5,6 +5,6 @@ namespace LPL_Systems.Services
 {
     interface IEmployeeRepository : IBaseRepository<Employee>
     {
-        Task<Employee> LoginAsync(string email, string password);
+        //Task<Employee> LoginAsync(string email, string password);
     }
 }
