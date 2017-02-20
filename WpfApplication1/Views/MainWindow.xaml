@@ -1,0 +1,34 @@
+﻿<Window x:Class="LPLSystems.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LPLSystems.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="image1" Grid.Column="1" Source="../Assets/LPLLogo.png"/>
+        <Frame x:Name="childContent" Grid.Row="2" Grid.Column="1" Content="" NavigationUIVisibility="Hidden"/>
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Made With"/>
+            <Label x:Name="HeartLabel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="❤" BorderBrush="Black" BorderThickness="0" />
+            <Label HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="By Zeeshan S.H"  />
+        </StackPanel>
+        <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button x:Name="buttonExit" Content="-" Width="25" Click="AppNavigationButton_Click"/>
+            <Button x:Name="buttonMin" Content="X" Width="25" Click="AppNavigationButton_Click"/>
+        </StackPanel>
+        <Label x:Name="labelTitle" Content="Login" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Rockwell" FontSize="36"/>
+    </Grid>
+</Window>
