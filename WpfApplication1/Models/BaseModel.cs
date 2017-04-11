@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace LPLSystems.Models
 {
@@ -6,6 +7,6 @@ namespace LPLSystems.Models
     {
         [Key]
         [Range(0, 12)]
-        public int id { get; set; }
+        public Guid id { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using LPLSystems.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace LPLSystems.Services
         }
 
         // Get Entity by ID
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(Guid id)
         {
             return await _context.Set<T>().FirstOrDefaultAsync(e => e.id == id);
         }
@@ -37,7 +38,7 @@ namespace LPLSystems.Services
         }
 
         // Delete Entity By Id
-        public async Task<T> DeleteByIdAsync(int id)
+        public async Task<T> DeleteByIdAsync(Guid id)
         {
             var entity = _context.Set<T>().FirstOrDefault(e => e.id == id);
             if (entity != null)
