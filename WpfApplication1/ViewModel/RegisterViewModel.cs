@@ -1,8 +1,11 @@
 ﻿using LPLSystems.Models;
 using LPLSystems.Services;
+using LPLSystems.Views;
 using System;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
+using LPLSystems.Business;
 
 namespace LPLSystems.ViewModel
 {
@@ -10,11 +13,6 @@ namespace LPLSystems.ViewModel
     {
         private Employee _employee;
         private IEmployeeRepository _repository = new EmployeeRespository();
-
-        public RegisterViewModel()
-        {
-            SaveCommand = new RelayCommand(OnSave);
-        }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
@@ -32,93 +30,33 @@ namespace LPLSystems.ViewModel
         }
 
         public Guid EmployeeID { get; set; }
-        public ICommand SaveCommand;
 
-        public async void LoadEmployee()
+
+        private ICommand _navigate;
+        private ICommand _saveCommand;
+
+        public ICommand SaveCommand
         {
-            Employee = await _repository.GetByIdAsync(EmployeeID);
+            get
+            {
+                return _saveCommand ?? (_saveCommand = new RelayCommand(() => OnSaveAction(), _canExecute ));
+            }
+        }
+        public ICommand NavigateBackCommand
+        {
+            get
+            {
+                return _navigate ?? (_navigate = new RelayCommand(() => Navigation.NavigateTo("Login"), _canExecute));
+            }
         }
 
-        private async void OnSave()
+        private Func<bool> _canExecute;
+
+        public void OnSaveAction()
         {
+            _repository.AddAsync(_employee);
+        }
 
-        }   
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //private string _firstname,
-        //               _lastname,
-        //               _email,
-        //               _phone,
-        //               _position,
-        //               _pwd,
-        //               _errorMessage;
-        //public string FirstName
-        //{
-        //    get { return _firstname; }
-        //    set
-        //    {
-        //        _firstname = value;
-        //        Notify(nameof(FirstName));
-
-        //    }
-        //}
-        //public string LastName
-        //{
-        //    get { return _lastname; }
-        //    set
-        //    {
-        //        _lastname = value;
-        //        Notify(nameof(LastName));
-        //    }
-        //}
-        //public string Email
-        //{
-        //    get { return _email; }
-        //    set
-        //    {
-        //        _email = value;
-        //        Notify(nameof(Email));
-        //    }
-        //}
-        //public string Phone
-        //{
-        //    get { return _phone; }
-        //    set
-        //    {
-        //        _phone = value;
-        //        Notify(nameof(Phone));
-        //    }
-        //}
-        //public string Position
-        //{
-        //    get { return _position; }
-        //    set
-        //    {
-        //        _position = value;
-        //        Notify(nameof(Position));
-        //    }
-        //}
-        //public string Password
-        //{
-        //    set
-        //    {
-        //        _position = value;
-        //        Notify(nameof(Password));
-        //    }
-        //}
-        //public string ErrorMessage
-        //{
-        //    get
-        //    {
-        //        return _errorMessage;
-        //    }
-        //    set
-        //    {
-        //        _errorMessage = value;
-        //        Notify(nameof(ErrorMessage));
-        //    }
-        //}
         //private void Notify(string propertyName)
         //{
         //    if (PropertyChanged != null)

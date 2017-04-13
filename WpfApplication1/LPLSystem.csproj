@@ -124,7 +124,11 @@
     <Compile Include="Services\IRelayCommand.cs" />
     <Compile Include="Services\RelayCommand.cs" />
     <Compile Include="ValidatableBindableBase.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
+    <Compile Include="Views\Dashboard.xaml.cs">
+      <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -132,6 +136,10 @@
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Container.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -212,6 +220,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\LPLLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\manage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\register.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\logout.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

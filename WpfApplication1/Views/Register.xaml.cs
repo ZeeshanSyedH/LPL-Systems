@@ -18,11 +18,6 @@ namespace LPLSystems.Views
             InitializeComponent();
         }
 
-        private async void ReturnLogin_Click(object sender, System.Windows.RoutedEventArgs e)
-        {
-            Navigation.NavigateTo((Button)sender);
-        }
-
         private async void RegisterUser_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             //if (validateInput())

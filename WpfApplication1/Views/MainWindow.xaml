@@ -23,7 +23,7 @@
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
             <Label HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="Made With"/>
             <Label x:Name="HeartLabel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="❤" BorderBrush="Black" BorderThickness="0" />
-            <Label HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="By Zeeshan S.H"  />
+            <Label HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="By Zeeshan S.H" />
         </StackPanel>
         <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
             <Button x:Name="buttonExit" Content="-" Width="25" Click="AppNavigationButton_Click"/>

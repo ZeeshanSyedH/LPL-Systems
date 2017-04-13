@@ -4,7 +4,6 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LPLSystems.Views"
-      xmlns:vm="clr-namespace:LPLSystems.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="300"
       Title="Register" Width="570.833" Background="White">
@@ -13,7 +12,6 @@
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -54,7 +52,13 @@
             </StackPanel>
         </StackPanel>
         <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding ErrorMessage}" Grid.Row="2" Grid.ColumnSpan="2" Foreground="#FFE85050" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-        <Button Grid.Row="3" x:Name="buttonRegister" Click="RegisterUser_Click" Content="Register" HorizontalAlignment="Right" Margin="65,16,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
-        <Button Grid.Row="3" x:Name="buttonBack" Click="ReturnLogin_Click"  Content="← Back" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="75" Tag="Login"/>
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,20,0">
+            <Image Source="/LPLSystems;component/Assets/register.png" Height="40" Width="40" Margin="0"></Image>
+            <Button Command="{Binding SaveCommand}" Height="Auto" Content="Register" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0">
+            <Image Source="/LPLSystems;component/Assets/back.png" Height="40" Width="40" Margin="0"></Image>
+            <Button Command="{Binding NavigateBackCommand}" Height="Auto" Content="Return" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
     </Grid>
 </Page>
