@@ -10,10 +10,16 @@ namespace LPLSystems.Views
     /// </summary>
     public partial class Login : Page
     {
+
         public Login()
         {
             this.DataContext = new LoginViewModel();
             InitializeComponent();
+        }
+
+        private void pwd_changed(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

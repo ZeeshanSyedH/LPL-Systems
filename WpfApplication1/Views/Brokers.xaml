@@ -1,0 +1,36 @@
+﻿<Page x:Class="LPLSystems.Views.Brokers"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LPLSystems.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Brokers" Width="570.833" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="4*"/>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,10"/>
+        <Label Content="Filter By Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,14,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="124,17,0,0"/>
+        <Label Content="Filter By State:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,11,0,0" Grid.Column="1"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="134,14,0,0" Grid.Column="1"/>
+        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0">
+            <Image Source="/LPLSystems;component/Assets/back.png" Height="40" Width="40" Margin="0"></Image>
+            <Button Command="{Binding NavigateBackCommand}" Height="Auto" Content="Return" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,20,0">
+            <Image Source="/LPLSystems;component/Assets/update.png" Height="40" Width="40" Margin="0"></Image>
+            <Button Command="{Binding UpdateBrokersCommand}" Height="Auto" Content="Update" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
+    </Grid>
+</Page>

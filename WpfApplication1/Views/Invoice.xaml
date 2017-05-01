@@ -1,0 +1,71 @@
+﻿<Page x:Class="LPLSystems.Views.Invoice"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LPLSystems.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300"
+      Title="Invoice" Width="570.833" Background="White">
+
+      <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            <StackPanel Margin="2" Orientation="Horizontal">
+                <Label x:Name="labelFirstName" Content="Client" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <ComboBox Text="{Binding FirstName}" Margin="5" Width="200" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black">
+                    <ComboBoxItem Content="Cascades"/>
+                    <ComboBoxItem Content="IBM"/>
+                    <ComboBoxItem Content="Jules"/>
+                </ComboBox> 
+            </StackPanel>
+            <StackPanel Margin="2" Orientation="Horizontal">
+                <Label x:Name="labelLastName" Content="Pick Up Location" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Text="{Binding Invoice.pickupLocation}" Margin="5" Width="200" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
+            </StackPanel>
+            <StackPanel Margin="2" Orientation="Horizontal" Width="269">
+                <Label x:Name="labelPhone" Content="Drop Off Location" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Text="{Binding Invoice.dropoffLocation}" Margin="5" Width="171" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
+            </StackPanel>
+            <StackPanel Margin="2" Orientation="Horizontal">
+                <Label x:Name="labelPosition" Content="Employee ID" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Text="{Binding Invoice.employeeID}" Margin="5" Width="215" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Grid.Column="1">
+            <Label HorizontalAlignment="Center" Content="Amount Details"/>
+            <StackPanel Margin="2" Orientation="Horizontal">
+                <Label x:Name="labelEmail" Content="Rate Amount" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox Text="{Binding Invoice.invoiceRate}" Margin="5" Width="223" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
+            </StackPanel>
+            <StackPanel Margin="2" Orientation="Horizontal">
+                <Label x:Name="labelPassword" Content="Currency" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <ComboBox x:Name="CBcurrency"  Margin="5" Width="200" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" >
+                    <ComboBoxItem Content="CAD"/>
+                    <ComboBoxItem Content="USD"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Margin="2" Orientation="Horizontal">
+                <Label x:Name="labelPasswordConf" Content="Comments" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox x:Name="commentsTB" Margin="5" Width="156" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
+            </StackPanel>
+        </StackPanel>
+        <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding ErrorMessage}" Grid.Row="2" Grid.ColumnSpan="2" Foreground="#FFE85050" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,20,0">
+            <Image Source="/LPLSystems;component/Assets/invoice.png" Height="40" Width="40" Margin="0"></Image>
+            <Button Command="{Binding CreateInvoiceCommand}" Height="Auto" Content="Create" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0">
+            <Image Source="/LPLSystems;component/Assets/back.png" Height="40" Width="40" Margin="0"></Image>
+            <Button Command="{Binding NavigateBackCommand}" Height="Auto" Content="Return" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
+    </Grid>  
+</Page>

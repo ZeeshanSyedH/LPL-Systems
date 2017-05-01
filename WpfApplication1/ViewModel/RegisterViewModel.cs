@@ -11,7 +11,7 @@ namespace LPLSystems.ViewModel
 {
     class RegisterViewModel : INotifyPropertyChanged
     {
-        private Employee _employee;
+        private Employee _employee = new Employee();
         private IEmployeeRepository _repository = new EmployeeRespository();
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
@@ -24,14 +24,14 @@ namespace LPLSystems.ViewModel
                 if (value != _employee)
                 {
                     _employee = value;
-                    PropertyChanged(this, new PropertyChangedEventArgs("Employee"));
+                    Notify("Employee");
                 }
             }
         }
-
+        
         public Guid EmployeeID { get; set; }
 
-
+        #region ICommand Members
         private ICommand _navigate;
         private ICommand _saveCommand;
 
@@ -39,7 +39,7 @@ namespace LPLSystems.ViewModel
         {
             get
             {
-                return _saveCommand ?? (_saveCommand = new RelayCommand(() => OnSaveAction(), _canExecute ));
+                return _saveCommand ?? (_saveCommand = new RelayCommand(() => OnSaveAction(), _canExecute));
             }
         }
         public ICommand NavigateBackCommand
@@ -49,7 +49,7 @@ namespace LPLSystems.ViewModel
                 return _navigate ?? (_navigate = new RelayCommand(() => Navigation.NavigateTo("Login"), _canExecute));
             }
         }
-
+        #endregion
         private Func<bool> _canExecute;
 
         public void OnSaveAction()
@@ -57,12 +57,13 @@ namespace LPLSystems.ViewModel
             _repository.AddAsync(_employee);
         }
 
-        //private void Notify(string propertyName)
-        //{
-        //    if (PropertyChanged != null)
-        //    {
-        //        PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        //    }
-        //}
+        private void Notify(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
 }
+

@@ -104,6 +104,14 @@
     <Compile Include="Business\Navigation.cs" />
     <Compile Include="Business\Validation.cs" />
     <Compile Include="ContainerHelper.cs" />
+    <Compile Include="Migrations\201704201608575_InitialDB.cs" />
+    <Compile Include="Migrations\201704201608575_InitialDB.Designer.cs">
+      <DependentUpon>201704201608575_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704201716017_InvoiceUpdate.cs" />
+    <Compile Include="Migrations\201704201716017_InvoiceUpdate.Designer.cs">
+      <DependentUpon>201704201716017_InvoiceUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -124,10 +132,24 @@
     <Compile Include="Services\IRelayCommand.cs" />
     <Compile Include="Services\RelayCommand.cs" />
     <Compile Include="ValidatableBindableBase.cs" />
+    <Compile Include="ViewModel\BrokerViewModel.cs" />
+    <Compile Include="ViewModel\DashboardViewModel.cs" />
+    <Compile Include="ViewModel\HistoryViewModel.cs" />
+    <Compile Include="ViewModel\InvoiceViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
+    <Compile Include="ViewModel\ReportsViewModel.cs" />
+    <Compile Include="Views\Brokers.xaml.cs">
+      <DependentUpon>Brokers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\History.xaml.cs">
+      <DependentUpon>History.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice.xaml.cs">
+      <DependentUpon>Invoice.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -135,11 +157,22 @@
     <Compile Include="Views\Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
-    <Page Include="Views\Container.xaml">
+    <Compile Include="Views\Reports.xaml.cs">
+      <DependentUpon>Reports.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\Brokers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Dashboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\History.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Invoice.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,9 +184,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Views\Container.xaml.cs">
-      <DependentUpon>Container.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -162,6 +192,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reports.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -180,6 +214,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201704201608575_InitialDB.resx">
+      <DependentUpon>201704201608575_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704201716017_InvoiceUpdate.resx">
+      <DependentUpon>201704201716017_InvoiceUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -241,6 +281,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\statement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\expense.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,27 @@
+﻿<Page x:Class="LPLSystems.Views.History"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LPLSystems.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="History" Width="570.833" Background="White">
+
+    <Grid>
+        <DataGrid Margin="0,50,0,60"/>
+        <Label Content="Filter By Invoice ID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,14,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="124,17,0,0"/>
+        <Label Content="Filter By Broker Name:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="274,14,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="420,14,0,0"/>
+        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,250,0,0">
+            <Image Source="/LPLSystems;component/Assets/back.png" Height="40" Width="40" Margin="0"/>
+            <Button Command="{Binding NavigateBackCommand}" Height="Auto" Content="Return" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,250,20,0">
+            <Image Source="/LPLSystems;component/Assets/update.png" Height="40" Width="40" Margin="0"/>
+            <Button Command="{Binding UpdateBrokersCommand}" Height="Auto" Content="Update" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

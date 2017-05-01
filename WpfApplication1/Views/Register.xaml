@@ -21,26 +21,26 @@
         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
             <StackPanel Margin="2" Orientation="Horizontal">
                 <Label x:Name="labelFirstName" Content="First Name" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Text="{Binding FirstName}" Margin="5" Width="200" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
+                <TextBox Text="{Binding Employee.firstName}" Margin="5" Width="200" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
             </StackPanel>
             <StackPanel Margin="2" Orientation="Horizontal">
                 <Label x:Name="labelLastName" Content="Last Name" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Text="{Binding LastName}" Margin="5" Width="200" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
+                <TextBox Text="{Binding Employee.lastName}" Margin="5" Width="200" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
             </StackPanel>
             <StackPanel Margin="2" Orientation="Horizontal" Width="269">
                 <Label x:Name="labelPhone" Content="Phone Number" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Text="{Binding Phone}" Margin="5" Width="171" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
+                <TextBox Text="{Binding Employee.phoneNumber}" Margin="5" Width="171" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
             </StackPanel>
             <StackPanel Margin="2" Orientation="Horizontal">
                 <Label x:Name="labelPosition" Content="Position" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Text="{Binding Position}" Margin="5" Width="215" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
+                <TextBox Text="{Binding Employee.position}" Margin="5" Width="215" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="1" Orientation="Vertical" Grid.Column="1">
             <Label HorizontalAlignment="Center" Content="Login Credentials"/>
             <StackPanel Margin="2" Orientation="Horizontal">
                 <Label x:Name="labelEmail" Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <TextBox Text="{Binding Email}" Margin="5" Width="223" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
+                <TextBox Text="{Binding Employee.emailAddress}" Margin="5" Width="223" Background="{x:Null}" BorderThickness="0,0,0,1" BorderBrush="Black" />
             </StackPanel>
             <StackPanel Margin="2" Orientation="Horizontal">
                 <Label x:Name="labelPassword" Content="Password" HorizontalAlignment="Left" VerticalAlignment="Top"/>

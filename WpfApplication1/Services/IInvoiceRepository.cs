@@ -9,7 +9,7 @@ namespace LPLSystems.Services
     {
         Task<List<Invoice>> GetInvoicesAsync();
         Task<List<Invoice>> GetInvoiceAsync(Guid Id);
-        Task<List<Invoice>> AddInvoicesAsync(Invoice invoice);
+        Task<Invoice> AddInvoicesAsync(Invoice invoice);
         Task<List<Invoice>> UpdateInvoicesAsync(Invoice invoice);
         Task<List<Invoice>> DeleteInvoicesAsync(Guid invoiceId);
     }

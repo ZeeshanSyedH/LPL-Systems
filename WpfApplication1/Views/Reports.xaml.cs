@@ -1,5 +1,4 @@
-﻿using LPLSystems.Business;
-using LPLSystems.ViewModel;
+﻿using LPLSystems.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +17,14 @@ using System.Windows.Shapes;
 namespace LPLSystems.Views
 {
     /// <summary>
-    /// Interaction logic for Dashboard.xaml
+    /// Interaction logic for Reports.xaml
     /// </summary>
-    public partial class Dashboard : Page
+    public partial class Reports : Page
     {
-        public Dashboard()
+        public Reports()
         {
-            DashboardViewModel DVM = new DashboardViewModel();
-            this.DataContext = DVM;
+            ReportsViewModel RVM = new ReportsViewModel();
+            this.DataContext = RVM;
             InitializeComponent();
         }
     }

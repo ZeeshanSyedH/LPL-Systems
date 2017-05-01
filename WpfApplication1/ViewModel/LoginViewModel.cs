@@ -15,7 +15,7 @@ namespace LPLSystems.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
-        private Employee _employee;
+        private Employee _employee = new Employee();
         private IEmployeeRepository _repository = new EmployeeRespository();
 
         public Employee Employee
@@ -62,7 +62,7 @@ namespace LPLSystems.ViewModel
         private Func<bool> _canExecute;
         public void SignInAction()
         {
-            // athorization Logix IF () THEN
+            //_repository.LoginAsync(username, password)
             Navigation.NavigateTo("Dashboard");
         }
 

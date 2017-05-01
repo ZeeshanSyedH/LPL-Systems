@@ -25,11 +25,11 @@
         <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Image Source="../Assets/User.png" Height="28" Width="28" Margin="0,10,0,0"></Image>
-                <TextBox Height="Auto" Width="200" Margin="10,20,10,10" BorderThickness="0,0,0,1" Background="{x:Null}" BorderBrush="Black"></TextBox>
+                <TextBox Text="{Binding Employee.emailAddress}" Height="Auto" Width="200" Margin="10,20,10,10" BorderThickness="0,0,0,1" Background="{x:Null}" BorderBrush="Black"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Image Source="../Assets/lock-solid.png" Height="28" Width="28" Margin="0,10,0,0"></Image>
-                <PasswordBox Height="Auto" Width="200" Margin="10,20,10,10" BorderThickness="0,0,0,1" Background="{x:Null}" BorderBrush="Black"></PasswordBox>
+                <PasswordBox x:Name="passwordFeild" Height="Auto" Width="200" Margin="10,20,10,10" BorderThickness="0,0,0,1" Background="{x:Null}" BorderBrush="Black" PasswordChanged="pwd_changed"></PasswordBox>
             </StackPanel>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">

@@ -1,0 +1,25 @@
+﻿<Page x:Class="LPLSystems.Views.Reports"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LPLSystems.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Reports" Width="570.833" Background="White">
+
+    <Grid>
+        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,50,0,0">
+            <Image Source="/LPLSystems;component/Assets/statement.png" Height="40" Width="40" Margin="0"></Image>
+            <Button Command="{Binding ViewFinancialStatementCommand}" Height="Auto" Content="Financial Statement" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,111,0,0">
+            <Image Source="/LPLSystems;component/Assets/expense.png" Height="40" Width="40" Margin="0"></Image>
+            <Button Command="{Binding ViewAggregatedExpenseCommand}" Height="Auto" Content="Aggregated Expenses" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
+        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,206,0,0">
+            <Image Source="/LPLSystems;component/Assets/back.png" Height="40" Width="40" Margin="0"></Image>
+            <Button Command="{Binding NavigateBackCommand}" Height="Auto" Content="Return" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+        </StackPanel>
+    </Grid>
+</Page>

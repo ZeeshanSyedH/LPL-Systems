@@ -4,7 +4,6 @@ namespace LPLSystems.Models
 {
     public class Invoice
     {
-
         [Key]
         public int invoiceID { get; set; }
 
@@ -12,13 +11,10 @@ namespace LPLSystems.Models
         public int organizationID { get; set; }
 
         [Required]
-        public Address pickupLocation { get; set; }
+        public string pickupLocation { get; set; }
 
         [Required]
-        public Address dropoffLocation { get; set; }
-
-        [Required]
-        public Employee Employee { get; set; }
+        public string dropoffLocation { get; set; }
 
         [Range(0, 12)]
         public int employeeID { get; set; }
@@ -28,7 +24,5 @@ namespace LPLSystems.Models
 
         [Required]
         public float invoiceRate;
-
-
     }
 }

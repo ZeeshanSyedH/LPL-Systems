@@ -20,27 +20,27 @@
         <StackPanel Grid.Row="0" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="1">
             <StackPanel Orientation="Horizontal" Margin="0,20,0,10">
                 <Image Source="/LPLSystems;component/Assets/invoice.png" Height="50" Width="50" Margin="0,10,0,0"></Image>
-                <Button Tag="CreateInvoice" Height="Auto" Content="Create Invoice" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT" FontSize="14"/>
+                <Button Tag="CreateInvoice" Command="{Binding CreateInvoiceCommand}" Height="Auto" Content="Create Invoice" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT" FontSize="14"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,20">
                 <Image Source="/LPLSystems;component/Assets/history.png" Height="50" Width="50" Margin="0,10,0,0"></Image>
-                <Button Tag="ViewInvoice" Height="Auto" Content="View History" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+                <Button Tag="ViewInvoice" Command="{Binding ViewHistoryCommand}" Height="Auto" Content="View History" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="0" VerticalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="1">
             <StackPanel Orientation="Horizontal" Margin="0,20,0,10">
                 <Image Source="/LPLSystems;component/Assets/manage.png" Height="60" Width="60" Margin="15,10,0,0"></Image>
-                <Button Tag="ManageVendors" Height="Auto" Content="Manage Brokers" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT" FontSize="14"/>
+                <Button Tag="ManageVendors" Height="Auto" Content="Manage Brokers" Command="{Binding ManageBrokersCommand}" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT" FontSize="14"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,20">
                 <Image Source="/LPLSystems;component/Assets/report.png" Height="50" Width="50" Margin="25,10,0,0"></Image>
-                <Button Tag="ViewReports" Height="Auto" Content="Generate Reports" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
+                <Button Tag="ViewReports" Height="Auto" Content="Generate Reports" Command="{Binding ViewReportsCommand}" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="2" Grid.ColumnSpan="4" Grid.Column="0">
             <StackPanel Orientation="Horizontal" Margin="0,0,20,21">
                 <Image Source="/LPLSystems;component/Assets/logout.png" Height="50" Width="50" Margin="25,10,0,0"></Image>
-                <Button Tag="Login" Height="Auto" Content="Log Out" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT" Click="LogOut_Click"/>
+                <Button Tag="Login" Height="Auto" Content="Log Out" Background="{x:Null}" BorderThickness="0,0,0,0" BorderBrush="Black" Margin="10,0,0,0" FontFamily="Perpetua Titling MT"/>
             </StackPanel>
         </StackPanel>
 
